@@ -49,8 +49,8 @@ I also had the honor to work with talented Bachelor and Master students and (co-
 
 # Research 
 
-## Reserach Vision
-Motivated by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/), I strongly favor having a reserach vision rather than a narrowly defined reserach area. My scientific "home base" lies at the intersection of  **technology** and **education**, constituting the core of my research endeavors. Since **Data** affects my everyday life, my reserach vision turns around data:
+## Research Vision
+Motivated by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/), I strongly favor having a research vision rather than a narrowly defined research area. My scientific "home base" lies at the intersection of  **technology** and **education**, constituting the core of my research endeavors. Since **Data** affects my everyday life, my research vision turns around data:
 
 > *Data is omnipresent, people generate it every day; it depicts our complex reality.
 > Learning is ubiquitous; people learn every day; it is the basis for positive change.
@@ -58,12 +58,12 @@ Motivated by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/), I strongly favo
 
 ## Research projects
 
-This (non-exhaustive) list of my latest (reserach) projects shows what I am interested in:
+This (non-exhaustive) list of my latest (research) projects shows what I am interested in:
 
 - [PDA](https://github.com/xstone93/atlas/) - *Divide and conquer* - Decomposing problems to make solvable problems out of it, this is one of the central learning goals of many CS1 courses. In theory, this sounds easy, but in practice, this is one of the hardest concepts to learn! One approach to help students with that is *problem planning* (similar to architects that are making a plan for a house. In traditional classes with a high number of students, this approach will cause scaling issues. PDA tries to solve this problem by using the code generation capabilities of LLMs combined with problems written in natural languages that are translated to source code and tested against a test suite. This tool was developed collaboratively with Brown University and evaluated in one of my coding classes at TU Graz.
 - [TransfArr](https://transfer.cs.brown.edu/) - Transferring between different programming languages can be challenging for beginners. Not only is the syntax different, but semantical and idiomatic features differ between languages. The tool *TransfArr* aims to help learners master the transition from the programming language Pyret to Python by providing a helpful environment. 
 - [PM Stocket](https://pm-stocket.at/) - The PM Stocket is a tool that has been used since 2021 in the course *Project Management* at Graz University of Technology. The tool was introduced to engage students into various activities within this class (but also beyond the scope of the course). The tool was evaluated every academic year and improved further to provide students with a motivating platform to learn and collaborate.
-- [SMAwT](https://smawt.codislabgraz.org/) - The *Social Media Awareness Training* (SMAwT) is an interdisciplinary reserach project with teachers, educators, software developers, and researchers from several areas. The aim of this tool is (and was) to train secondary school children in social media skills. The usage of the training was accompanied by a reserach study on how social media affects kids everyday life. 
+- [SMAwT](https://smawt.codislabgraz.org/) - The *Social Media Awareness Training* (SMAwT) is an interdisciplinary research project with teachers, educators, software developers, and researchers from several areas. The aim of this tool is (and was) to train secondary school children in social media skills. The usage of the training was accompanied by a research study on how social media affects kids everyday life. 
 - [sCool](https://scool.codislabgraz.org/) - The educational video game sCool was my entry point into academia and research. Based on the idea that kids learn coding by working with a video game, the tool was developed further and improved in several Bachelor's and Master's thesis.
 
 ## Publications
