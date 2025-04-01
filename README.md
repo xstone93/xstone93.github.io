@@ -1,19 +1,8 @@
 # Alexander Steinmaurer - Academic Website
 
-Hi, I am Alex Steinmaurer, Study Program Coordinator of the Ph.D. Program "Digital Transformation in Learning" and Post Doc ("Computing Education") at [IT:U Austria](https://it-u.at/), a newly founded interdisciplinary university in Linz, Austria. I am also an adjunct fellow at the [Cognitive and Digital Science Lab](https://codislabgraz.org/) at Graz University of Technology. I obtained a Ph.D. in Computer Science from the [Faculty of Computer Science and Biomedical Engineering](https://csbme.tugraz.at/) at Graz University of Technology under the supervision of [Christian Gütl](https://online.tugraz.at/tug_online/pl/ui/$ctx/visitenkarte.show_vcard?pPersonenId=DBBE6CF53E98F4C0&pPersonenGruppe=3). 
+Hi, I am Alex Steinmaurer, Study Program Coordinator of the Ph.D. Program "Digital Transformation in Learning" and [Post Doc](https://it-u.at/en/research/team/alexander-steinmaurer/) ("Computing Education") at [IT:U Austria](https://it-u.at/), a newly founded interdisciplinary university in Linz, Austria. I'm also an adjunct fellow at the [Cognitive and Digital Science Lab](https://codislabgraz.org/) at Graz University of Technology. I obtained a Ph.D. in Computer Science from the [Faculty of Computer Science and Biomedical Engineering](https://csbme.tugraz.at/) at Graz University of Technology under the supervision of [Christian Gütl](https://online.tugraz.at/tug_online/pl/ui/$ctx/visitenkarte.show_vcard?pPersonenId=DBBE6CF53E98F4C0&pPersonenGruppe=3). 
 
-During the fall semester of 2023, I worked as a Research Fellow at the [PLT Group](https://cs.brown.edu/research/plt/) of Brown University. I worked on approaches and tools to rethinking data science/programming education in times of LLMs, advised by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/) and [Kathi Fisler](https://cs.brown.edu/~kfisler/).
-
-My research interests are mainly in the field of Computer Science Education. Here is a list of topics that I am interested in:
- 
-- **LLM-assisted (CS) Education** - Meaningful (!) integration of large language models (LLMs) into educational contexts, such as individualizing learning experiences.
-- **Educational Data Analysis** - Analysis of educational data (qualitative and quantitative) retrieved from a real-life context such as courses, workshops, learning technology, or data sets.
-- **Game-based learning and Gamification** - From a broad perspective, game-based learning could be seen as an engaging learning technology. But GBL/gamification is more than "playing a game and learning". A well-considered design process, implementation, and evaluation are necessary for both the tool and the teaching context.
-- **Large-scale teaching** - Evaluation of students' learning experiences within a large-scale teaching and learning context.
-- **Curriculum design** - Designing dedicated curricula for different educational contexts and topics such as data science, introduction to programming, or computational thinking. 
-- **Engaging learning technologies** - Designing engaging and interactive learning experiences in digital (and immersive) environments. This not only includes the development of technologies but also the evaluation within an educational setting.
-- **Virtual Reality in Education** - Using mixed reality approaches to transform traditional learning contexts in immersive learning experiences. 
-
+During the fall semester of 2023, I worked as a Research Fellow at the [PLT Group](https://cs.brown.edu/research/plt/) of Brown University. I worked on approaches and tools to rethink data science/programming education in times of LLMs, advised by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/) and [Kathi Fisler](https://cs.brown.edu/~kfisler/).
 
 # Teaching
 During my academic career, I had the opportunity to give many different lectures and courses. I gave courses at Graz University of Technology, FH Campus 02, University of Applied Sciences Upper Austria, and University College of Teacher Education Styria.
@@ -63,6 +52,16 @@ Motivated by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/), I strongly favo
 > *Data is omnipresent, people generate it every day; it depicts our complex reality.
 > Learning is ubiquitous; people learn every day; it is the basis for positive change.
 > How can data and learning be linked to bring positive change?*
+
+My research interests are mainly in the field of Computer Science Education. Here is a list of topics that I am interested in:
+ 
+- **LLM-assisted (CS) Education** - Meaningful (!) integration of large language models (LLMs) into educational contexts, such as individualizing learning experiences.
+- **Educational Data Analysis** - Analysis of educational data (qualitative and quantitative) retrieved from a real-life context such as courses, workshops, learning technology, or data sets.
+- **Game-based learning and Gamification** - From a broad perspective, game-based learning could be seen as an engaging learning technology. But GBL/gamification is more than "playing a game and learning". A well-considered design process, implementation, and evaluation are necessary for both the tool and the teaching context.
+- **Large-scale teaching** - Evaluation of students' learning experiences within a large-scale teaching and learning context.
+- **Curriculum design** - Designing dedicated curricula for different educational contexts and topics such as data science, introduction to programming, or computational thinking. 
+- **Engaging learning technologies** - Designing engaging and interactive learning experiences in digital (and immersive) environments. This not only includes the development of technologies but also the evaluation within an educational setting.
+- **Virtual Reality in Education** - Using mixed reality approaches to transform traditional learning contexts in immersive learning experiences. 
 
 ## Research projects
 
