@@ -1,4 +1,6 @@
-# Me in a nutshell
+# Alexander Steinmaurer - Academic Website
+
+## Me in a nutshell
 
 I'm **Alex Steinmaurer**, a computer scientist, educator, and researcher from Upper Austria. I currently work at [IT:U Austria](https://it-u.at/), a newly established interdisciplinary university in Linz with the goal of transforming learning and science. 
 
