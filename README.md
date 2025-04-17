@@ -1,8 +1,8 @@
 # Me in a nutshell
 
-I'm **Alex Steinmaurer**, a computer scientist, educator, and researcher from Upper Austria. I currently work at [IT:U Austria](https://it-u.at/), a newly established interdisciplinary university in Linz.
+I'm **Alex Steinmaurer**, a computer scientist, educator, and researcher from Upper Austria. I currently work at [IT:U Austria](https://it-u.at/), a newly established interdisciplinary university in Linz with the goal of transforming learning and science. 
 
-At IT:U, I serve in two roles: as **study program coordinator** for the Ph.D. program _Digital Transformation in Learning_, and as a [**Postdoctoral Researcher**](https://it-u.at/en/research/team/alexander-steinmaurer/), supervised by Prof. [Manuela Paechter](https://it-u.at/en/research/professors/manuela-paechter/).
+At IT:U, I serve in two roles: as **study program coordinator** for the Ph.D. program _Digital Transformation in Learning_, and as a [**postdoctoral researcher**](https://it-u.at/en/research/team/alexander-steinmaurer/), supervised by Prof. [Manuela Paechter](https://it-u.at/en/research/professors/manuela-paechter/).
 
 My postdoctoral research lies at the intersection of computer science and education. I investigate the impact of generative AI on learning processes, with a particular focus on computing education. Together with an interdisciplinary team spanning learning sciences, psychology, educational technology, and computer science, I explore how conversational agents and large language models influence the development of computational thinking and coding skills. This includes studying interaction patterns, educational settings, and common misconceptions that arise in AI-supported learning environments.
 
