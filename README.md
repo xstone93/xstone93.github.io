@@ -1,8 +1,16 @@
-# Alexander Steinmaurer - Academic Website
+# Me in a nutshell
 
-Hi, I am Alex Steinmaurer, Study Program Coordinator of the Ph.D. Program "Digital Transformation in Learning" and [Post Doc](https://it-u.at/en/research/team/alexander-steinmaurer/) ("Computing Education") at [IT:U Austria](https://it-u.at/), a newly founded interdisciplinary university in Linz, Austria. I'm also an adjunct fellow at the [Cognitive and Digital Science Lab](https://codislabgraz.org/) at Graz University of Technology. I obtained a Ph.D. in Computer Science from the [Faculty of Computer Science and Biomedical Engineering](https://csbme.tugraz.at/) at Graz University of Technology under the supervision of [Christian Gütl](https://online.tugraz.at/tug_online/pl/ui/$ctx/visitenkarte.show_vcard?pPersonenId=DBBE6CF53E98F4C0&pPersonenGruppe=3). 
+I'm **Alex Steinmaurer**, a computer scientist, educator, and researcher from Upper Austria. I currently work at [IT:U Austria](https://it-u.at/), a newly established interdisciplinary university in Linz.
 
-During the fall semester of 2023, I worked as a Research Fellow at the [PLT Group](https://cs.brown.edu/research/plt/) of Brown University. I worked on approaches and tools to rethink data science/programming education in times of LLMs, advised by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/) and [Kathi Fisler](https://cs.brown.edu/~kfisler/).
+At IT:U, I serve in two roles: as **study program coordinator** for the Ph.D. program _Digital Transformation in Learning_, and as a [**Postdoctoral Researcher**](https://it-u.at/en/research/team/alexander-steinmaurer/), supervised by Prof. [Manuela Paechter](https://it-u.at/en/research/professors/manuela-paechter/).
+
+My postdoctoral research lies at the intersection of computer science and education. I investigate the impact of generative AI on learning processes, with a particular focus on computing education. Together with an interdisciplinary team spanning learning sciences, psychology, educational technology, and computer science, I explore how conversational agents and large language models influence the development of computational thinking and coding skills. This includes studying interaction patterns, educational settings, and common misconceptions that arise in AI-supported learning environments.
+
+In addition to my work at IT:U, I'm an **adjunct fellow** at the [Cognitive and Digital Science Lab](https://codislabgraz.org/) at Graz University of Technology. I earned my Ph.D. in Computer Science from the [Faculty of Computer Science and Biomedical Engineering](https://csbme.tugraz.at/) at Graz University of Technology, under the supervision of Prof. [Christian Gütl](https://online.tugraz.at/tug_online/pl/ui/$ctx/visitenkarte.show_vcard?pPersonenId=DBBE6CF53E98F4C0&pPersonenGruppe=3).
+
+Since 2020, I have been an **external lecturer** at the University College of Teacher Education Styria (Graz), where I teach a Master's-level seminar on the development of (educational) multimedia systems. The course is designed for in-service teachers specializing in media informatics and digital media education. I view this seminar as a valuable opportunity to connect my research with classroom practice, introducing students to current topics in educational technology and working collaboratively on concepts and methods they can apply in their teaching.
+
+During the Fall 2023 semester, I was a **research fellow** with the [PLT Group](https://cs.brown.edu/research/plt/) at Brown University, working with Prof. [Shriram Krishnamurthi](https://cs.brown.edu/~sk/) and Prof. [Kathi Fisler](https://cs.brown.edu/~kfisler/). My work there focused on developing new approaches and tools for rethinking data science and programming education in the context of large language models.
 
 # Teaching
 During my academic career, I had the opportunity to give many different lectures and courses. I gave courses at Graz University of Technology, FH Campus 02, University of Applied Sciences Upper Austria, and University College of Teacher Education Styria.
@@ -17,11 +25,11 @@ I am especially proud that the courses *Introduction to Programming* and *Object
 - **Introduction to Scientific Working** [2021-2024] - This course is mandatory for TU Graz students who want to write their Bachelor's thesis. It is held each semester.  \[[Course website](https://xstone93.github.io/sci-work), [YT playlist](https://www.youtube.com/watch?v=NIbp18fU5Ww&list=PLtrp6_jkyyuK49OmNlSEkQxmyov4K1HGc)\]
 - **Engaging Learning Technologies** \[WS 2020-2024\] - In this interdisciplinary elective course, students learn about developing learning technologies and educational scenarios while evaluating their projects in real school classes.
 - **Development of Multimedia Systems** (previously Multimedia Systems 2) \[SS 2021-2024\] - This seminar is part of the Master's program *Media Informatics and Digital Media Education* at the University College of Teacher Education Styria. It covers different topics related to multimedia systems, such as educational system design, game-based learning, evaluation, or web development.  \[[Course resources '23](https://xstone93.github.io/courses/MIM2_23.html)\]
-- **Markup Languages** \[SS 2021-2022\] - This four-semester course is part of the Business Software Development program of FH Campus 02 (University of Applied Sciences). It covers the fundamentals of markup languages (HTML, XML, XSD, XPath) but also covers micro-services and interface design (REST, JSON).
+- **Markup Languages** \[SS 2021-2022\] - This four-semester course is part of the Business Software Development program of FH Campus 02 (University of Applied Sciences). It covers the fundamentals of markup languages (HTML, XML, XSD, XPath) but also covers microservices and interface design (REST, JSON).
 - **Operating Systems**  \[WS 2020-2021\] - This first-semester course at the Business Data Science program of FH Campus 02 covers the basics of operating systems. The students worked on concepts such as process management, memory management, I/O devices, Bash programming, and computer architecture.
 
 ## Supervising 
-I also had the honor to work with talented Bachelor and Master students and (co-)supervise their thesis:
+I also had the honor to work with talented Bachelor's, Master's, and Ph.D. students and (co-)supervise their thesis. I'm proud of the fantastic achievements of all my students; however, the following students have proven themselves in particular through their high level of academic commitment and achievements: 
 
 **Current Ph.D. Students**
 I am currently (co-)supervising the following Ph.D. students: 
@@ -53,20 +61,20 @@ Motivated by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/), I strongly favo
 > Learning is ubiquitous; people learn every day; it is the basis for positive change.
 > How can data and learning be linked to bring positive change?*
 
-My research interests are mainly in the field of Computer Science Education. Here is a list of topics that I am interested in:
+My research interests primarily focus on the field of _Computer Science Education_. Here is a (non-exhaustive) list of topics that I am interested in:
  
-- **LLM-assisted (CS) Education** - Meaningful (!) integration of large language models (LLMs) into educational contexts, such as individualizing learning experiences.
+- **LLM-enhanced (CS) Education** - Concepts and implementation of LLMs into educational contexts and observing the learning process. 
+- **Conversational Agents** - Development of conversational agents to support the learning processes of learners.
 - **Educational Data Analysis** - Analysis of educational data (qualitative and quantitative) retrieved from a real-life context such as courses, workshops, learning technology, or data sets.
-- **Game-based learning and Gamification** - From a broad perspective, game-based learning could be seen as an engaging learning technology. But GBL/gamification is more than "playing a game and learning". A well-considered design process, implementation, and evaluation are necessary for both the tool and the teaching context.
 - **Large-scale teaching** - Evaluation of students' learning experiences within a large-scale teaching and learning context.
-- **Curriculum design** - Designing dedicated curricula for different educational contexts and topics such as data science, introduction to programming, or computational thinking. 
-- **Engaging learning technologies** - Designing engaging and interactive learning experiences in digital (and immersive) environments. This not only includes the development of technologies but also the evaluation within an educational setting.
 - **Virtual Reality in Education** - Using mixed reality approaches to transform traditional learning contexts in immersive learning experiences. 
+- **Game-based learning and Gamification** - From a broad perspective, game-based learning could be seen as an engaging learning technology. But GBL/gamification is more than "playing a game and learning". A well-considered design process, implementation, and evaluation are necessary for both the tool and the teaching context.
 
 ## Research projects
 
 This (non-exhaustive) list of my latest (reserach) projects shows what I am interested in:
 
+- [Stackium](https://stack.juli.zip/) - Stackium is a debugger for educational purposes. It is designed to be easy to use and to provide a valuable learning experience for beginners to help them understand memory management.
 - [PDA](https://github.com/xstone93/atlas/) - *Divide and conquer* - Decomposing problems to make solvable problems out of it, this is one of the central learning goals of many CS1 courses. In theory, this sounds easy, but in practice, this is one of the hardest concepts to learn! One approach to help students with that is *problem planning* (similar to architects that are making a plan for a house. In traditional classes with a high number of students, this approach will cause scaling issues. PDA tries to solve this problem by using the code generation capabilities of LLMs combined with problems written in natural languages that are translated to source code and tested against a test suite. This tool was developed collaboratively with Brown University and evaluated in one of my coding classes at TU Graz.
 - [TransfArr](https://transfer.cs.brown.edu/) - Transferring between different programming languages can be challenging for beginners. Not only is the syntax different, but semantical and idiomatic features differ between languages. The tool *TransfArr* aims to help learners master the transition from the programming language Pyret to Python by providing a helpful environment. 
 - [PM Stocket](https://pm-stocket.at/) - The PM Stocket is a tool that has been used since 2021 in the course *Project Management* at Graz University of Technology. The tool was introduced to engage students into various activities within this class (but also beyond the scope of the course). The tool was evaluated every academic year and improved further to provide students with a motivating platform to learn and collaborate.
@@ -77,7 +85,7 @@ This (non-exhaustive) list of my latest (reserach) projects shows what I am inte
 
 I maintain my publications within a Google Docs [publication list](https://docs.google.com/document/d/1tQNeT14SvJLDQMYDtfQeuHtdW_vwFraIA8bpwHQnCPM/edit?usp=sharing)
 
-Before that, I liked to use [Research Gate](https://www.researchgate.net/profile/Alexander-Steinmaurer-3) for a while to manage all my publications. But as with almost every social network, it requires quite active maintenance, which takes some time. Even though RG has some good functionality to support you as much as possible, I ended up using mainly [Google Scholar](https://scholar.google.com/citations?hl=de&user=vERJIRAAAAAJ) instead. There you can find all my (recent) papers.
+Before that, I used [Research Gate](https://www.researchgate.net/profile/Alexander-Steinmaurer-3) for a while to manage all my publications. But as with almost every social network, it requires quite active maintenance, which takes some time. Even though RG has some good functionality to support you as much as possible, I ended up using mainly [Google Scholar](https://scholar.google.com/citations?hl=de&user=vERJIRAAAAAJ) instead. There you can find all my (recent) papers.
 
 ## Working with me? 
 
