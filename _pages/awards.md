@@ -4,7 +4,6 @@ permalink: /awards/
 author_profile: true
 ---
 
-# Awards
 - **2024** – Best Short Paper Award, *10th iLRN Conference*, IEEE Immersive Learning Research Network
 - **2023** – Best Paper Award, *LWMOOCS Conference*, IEEE Learning with MOOCs Conference
 - **2023** – Prize for Excellence in Teaching, *Course: Object-oriented Programming 1*, TU Graz 

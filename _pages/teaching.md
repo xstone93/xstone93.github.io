@@ -4,7 +4,6 @@ permalink: /teaching/
 author_profile: true
 ---
 
-# Teaching
 During my academic career, I had the opportunity to give many different lectures and courses. 
 I gave courses at Graz University of Technology, FH Campus 02, University of Applied Sciences Upper Austria, and University College of Teacher Education Styria.
 

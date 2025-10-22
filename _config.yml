@@ -23,7 +23,7 @@ repository               : "xstone93/xstone93.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Alexander Steinmaurer"
   pronouns         : # example: "he/him"  
   bio              : "Postdoctoral Researcher in Computing Education"

@@ -4,8 +4,6 @@ permalink: /research/
 author_profile: true
 ---
 
-# Research 
-
 ## Research Vision
 Motivated by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/), I strongly favor having a research vision rather than a narrowly defined research area. My scientific "home base" lies at the intersection of  **technology** and **education**, constituting the core of my research endeavors. Since **Data** affects my everyday life, my research vision turns around data:
 

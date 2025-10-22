@@ -4,8 +4,6 @@ permalink: /publications/
 author_profile: true
 ---
 
-# Academic Service
-
 - **ACM SIGCSE Technical Symposium**  
   Demos & Lightning Talks Chair — *St. Louis, 2026*
 
