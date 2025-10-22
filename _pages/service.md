@@ -1,6 +1,6 @@
 ---
-title: "Publications"
-permalink: /publications/
+title: "Service"
+permalink: /service/
 author_profile: true
 ---
 
