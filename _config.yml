@@ -220,20 +220,36 @@ kramdown:
 collections:
   teaching:
     output: true
-    permalink: /:collection/:path/
+    permalink: /teaching/:path/
+  supervision:
+    output: true
+    permalink: /supervision/:path/
+  research:
+    output: true
+    permalink: /research/:path/
   publications:
     output: true
-    permalink: /:collection/:path/
-  portfolio:
+    permalink: /publications/:path/
+  service:
     output: true
-    permalink: /:collection/:path/
-  talks:
+    permalink: /service/:path/
+  awards:
     output: true
-    permalink: /:collection/:path/
+    permalink: /awards/:path/
+  resources:
+    output: true
+    permalink: /resources/:path/
 
 
-# These settings control how pages and collections are included in the site
 defaults:
+  # _pages 
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
   # _teaching
   - scope:
       path: ""
@@ -242,6 +258,8 @@ defaults:
       layout: single
       author_profile: true
       share: true
+      comments: true
+
   # _supervision
   - scope:
       path: ""
@@ -249,14 +267,16 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true      
+      share: true
+
   # _research
   - scope:
       path: ""
       type: research
     values:
       layout: single
-      author_profile: true      
+      author_profile: true
+
   # _publications
   - scope:
       path: ""
@@ -265,6 +285,8 @@ defaults:
       layout: single
       author_profile: true
       share: true
+      comments: true
+
   # _service
   - scope:
       path: ""
@@ -272,6 +294,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+
   # _awards
   - scope:
       path: ""
@@ -279,13 +302,14 @@ defaults:
     values:
       layout: single
       author_profile: true
+
   # _resources
   - scope:
       path: ""
       type: resources
     values:
       layout: single
-      author_profile: true    
+      author_profile: true
 
 
 # Sass/SCSS
