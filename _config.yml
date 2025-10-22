@@ -234,24 +234,6 @@ collections:
 
 # These settings control how pages and collections are included in the site
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
   # _teaching
   - scope:
       path: ""
@@ -260,7 +242,21 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      comments: true
+  # _supervision
+  - scope:
+      path: ""
+      type: supervision
+    values:
+      layout: single
+      author_profile: true
+      share: true      
+  # _research
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: single
+      author_profile: true      
   # _publications
   - scope:
       path: ""
@@ -269,24 +265,27 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      comments: true
-  # _portfolio
+  # _service
   - scope:
       path: ""
-      type: portfolio
+      type: service
     values:
       layout: single
       author_profile: true
-      share: true
-      comment: true
-  # _talks
+  # _awards
   - scope:
       path: ""
-      type: talks
+      type: awards
     values:
-      layout: talk
+      layout: single
       author_profile: true
-      share: true
+  # _resources
+  - scope:
+      path: ""
+      type: resources
+    values:
+      layout: single
+      author_profile: true    
 
 
 # Sass/SCSS
