@@ -18,6 +18,9 @@ url                      : https://xstone93.github.io # The base hostname & prot
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "xstone93/xstone93.github.io"
 
+# Site Author - The following control what appear as part of the author content on the side bar.
+#               If a field is blank the icon and link will not appear, otherwise it will be shown.
+#               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
   avatar           : "profile.png"
@@ -122,11 +125,37 @@ atom_feed:
   hide                   : false     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+alexa_site_verification  :
+yandex_site_verification :
+
+
+# Social Sharing
+twitter:
+  username               : &twitter
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 :  # Social media default site image
+og_description           :  # Social media default site image description
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+
+
 # Analytics
 analytics:
   provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
     tracking_id          :
+
 
 # Reading Files
 include:
@@ -188,23 +217,41 @@ kramdown:
 
 
 # These settings control the types of collections used by the template
-#collections:
-#  teaching:
-#    output: true
-#    permalink: /:collection/:path/
-#  publications:
-#    output: true
-#    permalink: /:collection/:path/
-#  portfolio:
-#    output: true
-#    permalink: /:collection/:path/
-#  talks:
-#    output: true
-#    permalink: /:collection/:path/
+collections:
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
 defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
   # _teaching
   - scope:
       path: ""
@@ -213,21 +260,7 @@ defaults:
       layout: single
       author_profile: true
       share: true
-  # _supervision
-  - scope:
-      path: ""
-      type: supervision
-    values:
-      layout: single
-      author_profile: true
-      share: true      
-  # _research
-  - scope:
-      path: ""
-      type: research
-    values:
-      layout: single
-      author_profile: true      
+      comments: true
   # _publications
   - scope:
       path: ""
@@ -236,27 +269,25 @@ defaults:
       layout: single
       author_profile: true
       share: true
-  # _service
+      comments: true
+  # _portfolio
   - scope:
       path: ""
-      type: service
+      type: portfolio
     values:
       layout: single
       author_profile: true
-  # _awards
+      share: true
+      comment: true
+  # _talks
   - scope:
       path: ""
-      type: awards
+      type: talks
     values:
-      layout: single
+      layout: talk
       author_profile: true
-  # _resources
-  - scope:
-      path: ""
-      type: resources
-    values:
-      layout: single
-      author_profile: true         
+      share: true
+
 
 # Sass/SCSS
 sass:
