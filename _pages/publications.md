@@ -12,4 +12,4 @@ Even though RG has some good functionality to support you as much as possible, I
 There you can find all my (recent) papers.
 
 ## Publication list
-{% bibliography %}
+{% bibliography %} 
