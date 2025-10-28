@@ -11,5 +11,5 @@ But as with almost every social network, it requires quite active maintenance, w
 Even though RG has some good functionality to support you as much as possible, I ended up using mainly [Google Scholar](https://scholar.google.com/citations?hl=de&user=vERJIRAAAAAJ) instead. 
 There you can find all my (recent) papers.
 
-## Publications
+## Publication list
 {% bibliography %}
