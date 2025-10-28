@@ -5,7 +5,7 @@ author_profile: true
 ---
 
 ## Research Vision
-Motivated by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/), I strongly favor having a research vision rather than a narrowly defined research area. My scientific "home base" lies at the intersection of  **technology** and **education**, constituting the core of my research endeavors. Since **Data** affects my everyday life, my research vision turns around data:
+Motivated by [Shriram Krishnamurthi](https://cs.brown.edu/~sk/), I strongly favor having a research vision rather than a narrowly defined research area. My scientific "home base" lies at the intersection of  **technology** and **education**, constituting the core of my research endeavors. Since **data** affects my everyday life, my research vision turns around data:
 
 > *Data is omnipresent, people generate it every day; it depicts our complex reality.
 > Learning is ubiquitous; people learn every day; it is the basis for positive change.

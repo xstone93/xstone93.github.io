@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm **Alex Steinmaurer**, a computer scientist, teacher, and researcher from Austria. I currently work at [IT:U Austria](https://it-u.at/), a newly established interdisciplinary university in Linz with the goal of transforming learning and science. At IT:U I'm a [**postdoctoral researcher**](https://it-u.at/en/persons/team/alexander-steinmaurer/), advised by Prof. [Manuela Paechter](https://it-u.at/en/research/professors/manuela-paechter/). I earned my Ph.D. in Computer Science from the [Faculty of Computer Science and Biomedical Engineering](https://csbme.tugraz.at/) at Graz University of Technology, under the supervision of Prof. [Christian Gütl](https://online.tugraz.at/tug_online/pl/ui/$ctx/visitenkarte.show_vcard?pPersonenId=DBBE6CF53E98F4C0&pPersonenGruppe=3). 
+I'm **Alex Steinmaurer**, a computer scientist, teacher, and researcher from Austria. I currently work at [IT:U Austria](https://it-u.at/), a newly established interdisciplinary university in Linz with the goal of transforming learning and science. At IT:U I'm a [postdoctoral researcher](https://it-u.at/en/persons/team/alexander-steinmaurer/), advised by Prof. [Manuela Paechter](https://it-u.at/en/research/professors/manuela-paechter/). I earned my Ph.D. in Computer Science from the [Faculty of Computer Science and Biomedical Engineering](https://csbme.tugraz.at/) at Graz University of Technology, under the supervision of Prof. [Christian Gütl](https://online.tugraz.at/tug_online/pl/ui/$ctx/visitenkarte.show_vcard?pPersonenId=DBBE6CF53E98F4C0&pPersonenGruppe=3). 
 
 My postdoctoral research lies at the intersection of computer science and education. I investigate the impact of generative AI on learning processes, with a particular focus on computing education. Together with an interdisciplinary team spanning learning sciences, psychology, educational technology, and computer science, I explore how conversational agents and large language models influence the development of computational thinking and coding skills. This includes studying interaction patterns, educational settings, and common misconceptions that arise in AI-supported learning environments.
 
@@ -19,4 +19,4 @@ During the Fall 2023 semester, I was a **research fellow** with the [PLT Group](
 
 ## Working with me? 
 
-If you are interested in my research area and would like to discuss your ideas for a Bachelor's or Master's thesis, I would love to hear from you - drop me an email (alexander.steinmaurer@it-u.at). Ensure that this email also contains some first serious thoughts on the topic, including an interesting problem/question you would like to answer (you do not have to come up with a solution/implementation, a good question is a perfect starting point!) 
+If you are interested in my research area and would like to discuss your ideas (as researcher or student), I am happy to hear from you. Just drop me an email (alexander.steinmaurer@it-u.at).

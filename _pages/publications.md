@@ -4,7 +4,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-I maintain my publications within a Google Docs [publication list](https://docs.google.com/document/d/1tQNeT14SvJLDQMYDtfQeuHtdW_vwFraIA8bpwHQnCPM/edit?usp=sharing)
+I maintain my publications within a Google Docs [publication list](https://docs.google.com/document/d/1tQNeT14SvJLDQMYDtfQeuHtdW_vwFraIA8bpwHQnCPM/edit?usp=sharing).
 
 Before that, I used [Research Gate](https://www.researchgate.net/profile/Alexander-Steinmaurer-3) for a while to manage all my publications. 
 But as with almost every social network, it requires quite active maintenance, which takes some time. 
