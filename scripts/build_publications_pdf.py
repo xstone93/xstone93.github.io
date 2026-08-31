@@ -156,6 +156,28 @@ def apa_url(entry: dict) -> str:
     return f'<link href="{escaped_url}" color="#175CD3">{html.escape(url)}</link>'
 
 
+def apa_note(entry: dict) -> str:
+    """Keep informative notes, but omit status text already expressed by APA."""
+    note = clean(entry.get("note"))
+    if not note:
+        return ""
+    status_phrases = (
+        "manuscript",
+        "submitted",
+        "under review",
+        "under revision",
+        "in preparation",
+        "preprint",
+        "accepted",
+        "in press",
+    )
+    if publication_type(entry) in {"preprint", "manuscript"} and any(
+        phrase in note.lower() for phrase in status_phrases
+    ):
+        return ""
+    return f'<font color="#9A3412"><b>[{html.escape(note)}]</b></font>'
+
+
 def apa_reference(entry: dict) -> str:
     authors = apa_authors(entry.get("author", ""))
     year = html.escape(clean(entry.get("year")) or "n.d.")
@@ -167,6 +189,9 @@ def apa_reference(entry: dict) -> str:
     url = apa_url(entry)
     if url:
         parts.append(url)
+    note = apa_note(entry)
+    if note:
+        parts.append(note)
     return " ".join(part for part in parts if part)
 
 
@@ -261,16 +286,6 @@ def main() -> None:
         firstLineIndent=-7 * mm,
         spaceAfter=3.5 * mm,
     )
-    note_style = ParagraphStyle(
-        "Note",
-        parent=citation_style,
-        fontName="Helvetica-Bold",
-        fontSize=8.2,
-        leading=10.5,
-        textColor=colors.HexColor("#9A3412"),
-        spaceAfter=1.5 * mm,
-    )
-
     story = [
         Paragraph("Alexander Steinmaurer - Publication List", title_style),
         Paragraph(f"Updated {date.today().strftime('%d %B %Y')}", updated_style),
@@ -291,9 +306,6 @@ def main() -> None:
             entries = sorted(grouped[section][year], key=author_sort_key)
             for entry in entries:
                 content = [Paragraph(apa_reference(entry), citation_style)]
-                note = clean(entry.get("note"))
-                if note:
-                    content.append(Paragraph(f"Note: {html.escape(note)}", note_style))
                 story.append(KeepTogether(content))
 
     document.build(story, onFirstPage=page_footer, onLaterPages=page_footer)
