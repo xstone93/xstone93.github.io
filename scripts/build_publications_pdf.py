@@ -23,12 +23,12 @@ from reportlab.platypus import (
 
 from build_publications import (
     OWN_NAME,
-    STATUS_ORDER,
-    STATUS_TITLES,
+    SECTION_ORDER,
+    SECTION_TITLES,
     TYPE_LABELS,
     clean,
     keywords,
-    publication_status,
+    publication_section,
     publication_type,
     venue,
 )
@@ -98,7 +98,7 @@ def main() -> None:
     for entry in database.entries:
         if "private" in keywords(entry):
             continue
-        grouped[publication_status(entry)][clean(entry.get("year")) or "n.d."].append(entry)
+        grouped[publication_section(entry)][clean(entry.get("year")) or "n.d."].append(entry)
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     document = SimpleDocTemplate(
@@ -185,19 +185,19 @@ def main() -> None:
         Paragraph(f"Updated {date.today().strftime('%d %B %Y')}", updated_style),
     ]
 
-    for status in STATUS_ORDER:
-        if status not in grouped:
+    for section in SECTION_ORDER:
+        if section not in grouped:
             continue
-        story.append(Paragraph(html.escape(STATUS_TITLES[status]), section_style))
+        story.append(Paragraph(html.escape(SECTION_TITLES[section]), section_style))
 
         years = sorted(
-            grouped[status],
+            grouped[section],
             key=lambda year: (year != "n.d.", int(year) if year.isdigit() else -1),
             reverse=True,
         )
         for year in years:
             story.append(Paragraph(html.escape(year), year_style))
-            entries = sorted(grouped[status][year], key=lambda item: clean(item.get("title")).lower())
+            entries = sorted(grouped[section][year], key=lambda item: clean(item.get("title")).lower())
             for entry in entries:
                 title = html.escape(clean(entry.get("title")) or "Untitled")
                 authors = pdf_authors(entry.get("author", ""))
