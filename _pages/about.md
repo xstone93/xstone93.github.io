@@ -17,8 +17,6 @@ In 2026/2027 I'm a **Goethe Teaching Professor** at the University Frankfurt whe
 
 I'm an **Adjunct Fellow** at the [Cognitive and Digital Science Lab](https://codislabgraz.org/) at Graz University of Technology.
 
-# Since 2020, I have been an **external lecturer** at the University College of Teacher Education Styria (Graz), where I teach a Master's-level seminar on the development of (educational) multimedia systems. The course is designed for in-service teachers specializing in media informatics and digital media education. I view this seminar as a valuable opportunity to connect my research with classroom practice, introducing students to current topics in educational technology and working collaboratively on concepts and methods they can apply in their teaching.
-
 During the Fall 2023 semester, I was a **Research Fellow** with the [PLT Group](https://cs.brown.edu/research/plt/) at Brown University, working with Prof. [Shriram Krishnamurthi](https://cs.brown.edu/~sk/) and Prof. [Kathi Fisler](https://cs.brown.edu/~kfisler/).
 
 {% include news.html %}
