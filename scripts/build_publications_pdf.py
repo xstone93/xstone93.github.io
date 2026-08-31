@@ -18,19 +18,16 @@ from reportlab.platypus import (
     KeepTogether,
     Paragraph,
     SimpleDocTemplate,
-    Spacer,
 )
 
 from build_publications import (
     OWN_NAME,
     SECTION_ORDER,
     SECTION_TITLES,
-    TYPE_LABELS,
     clean,
     keywords,
     publication_section,
     publication_type,
-    venue,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,45 +35,145 @@ BIB_FILE = ROOT / "_bibliography" / "publications.bib"
 OUTPUT_FILE = ROOT / "files" / "publications.pdf"
 
 
-def pdf_authors(author: str) -> str:
-    """Format BibTeX authors and underline the site owner's name."""
-    people = []
-    for raw_person in (part.strip() for part in author.split(" and ")):
-        if not raw_person:
+def initials(given_names: str) -> str:
+    """Convert given names to APA-style initials while retaining hyphens."""
+    result = []
+    for name in given_names.replace(".", "").split():
+        parts = [part for part in name.split("-") if part]
+        if not parts:
             continue
-        person = clean(raw_person)
-        if "," in person:
-            last, first = (part.strip() for part in person.split(",", 1))
-            display = f"{first} {last}"
-        else:
-            display = person
+        result.append("-".join(f"{part[0].upper()}." for part in parts))
+    return " ".join(result)
+
+
+def person_parts(raw_person: str) -> tuple[str, str]:
+    person = clean(raw_person)
+    if "," in person:
+        family, given = (part.strip() for part in person.split(",", 1))
+    else:
+        pieces = person.split()
+        family, given = pieces[-1], " ".join(pieces[:-1])
+    return family, given
+
+
+def apa_authors(author: str) -> str:
+    """Format up to 20 authors according to APA 7 reference-list rules."""
+    raw_people = [part.strip() for part in author.split(" and ") if part.strip()]
+    rendered = []
+    for raw_person in raw_people:
+        family, given = person_parts(raw_person)
+        display = f"{family}, {initials(given)}".strip()
         escaped = html.escape(display)
-        if OWN_NAME.lower() in display.lower():
+        normalized = f"{given} {family}".strip()
+        if OWN_NAME.lower() in normalized.lower():
             escaped = f"<u>{escaped}</u>"
-        people.append(escaped)
+        rendered.append(escaped)
 
-    if len(people) == 1:
-        return people[0]
-    if len(people) == 2:
-        return f"{people[0]} &amp; {people[1]}"
-    return ", ".join(people[:-1]) + f", &amp; {people[-1]}"
-
-
-def pdf_venue(entry: dict) -> str:
-    """Reuse the HTML generator's venue normalization as plain text."""
-    return html.unescape(venue(entry))
+    if len(rendered) > 20:
+        rendered = rendered[:19] + ["...", rendered[-1]]
+    if len(rendered) == 1:
+        return rendered[0]
+    return ", ".join(rendered[:-1]) + f", &amp; {rendered[-1]}"
 
 
-def entry_links(entry: dict) -> str:
-    links = []
+def apa_editors(editor: str) -> str:
+    rendered = []
+    for raw_person in (part.strip() for part in editor.split(" and ") if part.strip()):
+        family, given = person_parts(raw_person)
+        rendered.append(f"{html.escape(initials(given))} {html.escape(family)}")
+    if not rendered:
+        return ""
+    if len(rendered) == 1:
+        names = rendered[0]
+    else:
+        names = ", ".join(rendered[:-1]) + f", &amp; {rendered[-1]}"
+    role = "Ed." if len(rendered) == 1 else "Eds."
+    return f"{names} ({role}), " if rendered else ""
+
+
+def page_range(entry: dict, *, parenthetical: bool = False) -> str:
+    pages = clean(entry.get("pages")).replace("--", "-")
+    if not pages:
+        return ""
+    return f"(pp. {html.escape(pages)})" if parenthetical else html.escape(pages)
+
+
+def apa_source(entry: dict) -> str:
+    """Return the APA source element appropriate for this BibTeX type."""
+    entry_type = clean(entry.get("ENTRYTYPE")).lower()
+    ptype = publication_type(entry)
+    journal = clean(entry.get("journal"))
+    booktitle = clean(entry.get("booktitle"))
+    volume = clean(entry.get("volume"))
+    number = clean(entry.get("number"))
+    eid = clean(entry.get("eid"))
+    publisher = clean(entry.get("publisher"))
+
+    if ptype in {"preprint", "manuscript"}:
+        descriptor = "Preprint" if ptype == "preprint" else "Unpublished manuscript"
+        source_name = journal or clean(entry.get("institution"))
+        result = f"[{descriptor}]."
+        if source_name:
+            result += f" {html.escape(source_name)}."
+        return result
+
+    if entry_type == "article" and journal:
+        source = f"<i>{html.escape(journal)}</i>"
+        if volume:
+            source += f", <i>{html.escape(volume)}</i>"
+            if number:
+                source += f"({html.escape(number)})"
+        pages = page_range(entry)
+        if pages:
+            source += f", {pages}"
+        elif eid:
+            source += f", Article {html.escape(eid)}"
+        return source + "."
+
+    if entry_type in {"inproceedings", "conference", "incollection", "inbook"}:
+        editor = apa_editors(entry.get("editor", ""))
+        source = f"In {editor}<i>{html.escape(booktitle or publisher)}</i>"
+        pages = page_range(entry, parenthetical=True)
+        if pages:
+            source += f" {pages}"
+        source += "."
+        if publisher and publisher.lower() != (booktitle or "").lower():
+            source += f" {html.escape(publisher)}."
+        return source
+
+    return ""
+
+
+def apa_url(entry: dict) -> str:
     doi = clean(entry.get("doi"))
     if doi:
         url = f"https://doi.org/{doi}"
-        links.append(f'<link href="{html.escape(url, quote=True)}">DOI: {html.escape(doi)}</link>')
-    elif clean(entry.get("url")):
+    else:
         url = clean(entry.get("url"))
-        links.append(f'<link href="{html.escape(url, quote=True)}">Online</link>')
-    return "  |  ".join(links)
+    if not url:
+        return ""
+    escaped_url = html.escape(url, quote=True)
+    return f'<link href="{escaped_url}" color="#175CD3">{html.escape(url)}</link>'
+
+
+def apa_reference(entry: dict) -> str:
+    authors = apa_authors(entry.get("author", ""))
+    year = html.escape(clean(entry.get("year")) or "n.d.")
+    title = html.escape(clean(entry.get("title")) or "Untitled")
+    if publication_type(entry) in {"preprint", "manuscript"}:
+        title = f"<i>{title}</i>"
+    title_suffix = "" if clean(entry.get("title")).endswith((".", "?", "!")) else "."
+    parts = [f"{authors} ({year}).", f"{title}{title_suffix}", apa_source(entry)]
+    url = apa_url(entry)
+    if url:
+        parts.append(url)
+    return " ".join(part for part in parts if part)
+
+
+def author_sort_key(entry: dict) -> tuple[str, str]:
+    first_author = entry.get("author", "").split(" and ", 1)[0]
+    family, given = person_parts(first_author)
+    return family.lower(), given.lower()
 
 
 def page_footer(canvas, document) -> None:
@@ -160,14 +257,8 @@ def main() -> None:
         fontSize=8.8,
         leading=12.2,
         textColor=colors.HexColor("#182230"),
-        spaceAfter=1.5 * mm,
-    )
-    link_style = ParagraphStyle(
-        "Links",
-        parent=citation_style,
-        fontSize=7.8,
-        leading=10,
-        textColor=colors.HexColor("#175CD3"),
+        leftIndent=7 * mm,
+        firstLineIndent=-7 * mm,
         spaceAfter=3.5 * mm,
     )
     note_style = ParagraphStyle(
@@ -197,25 +288,12 @@ def main() -> None:
         )
         for year in years:
             story.append(Paragraph(html.escape(year), year_style))
-            entries = sorted(grouped[section][year], key=lambda item: clean(item.get("title")).lower())
+            entries = sorted(grouped[section][year], key=author_sort_key)
             for entry in entries:
-                title = html.escape(clean(entry.get("title")) or "Untitled")
-                authors = pdf_authors(entry.get("author", ""))
-                place = html.escape(pdf_venue(entry))
-                kind = html.escape(TYPE_LABELS[publication_type(entry)])
-                citation_parts = [f"<b>{title}</b>", authors]
-                if place:
-                    citation_parts.append(f"<i>{place}</i>")
-                citation_parts.append(f"{kind}, {html.escape(year)}")
-                content = [Paragraph("<br/>".join(citation_parts), citation_style)]
+                content = [Paragraph(apa_reference(entry), citation_style)]
                 note = clean(entry.get("note"))
                 if note:
                     content.append(Paragraph(f"Note: {html.escape(note)}", note_style))
-                links = entry_links(entry)
-                if links:
-                    content.append(Paragraph(links, link_style))
-                else:
-                    content.append(Spacer(1, 2 * mm))
                 story.append(KeepTogether(content))
 
     document.build(story, onFirstPage=page_footer, onLaterPages=page_footer)
