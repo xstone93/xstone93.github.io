@@ -7,6 +7,7 @@ author_profile: true
 My publication list is generated from a single BibTeX file. My name is shown in **bold**.
 For citation indexing, see also [Google Scholar](https://scholar.google.com/citations?user=vERJIRAAAAAJ&hl=en)
 and [ORCID](https://orcid.org/0000-0002-1760-2855).
+You can also download a [PDF version](/files/publications.pdf) suitable for a CV attachment.
 
 <style>
 .publication-section { margin-top: 2.2rem; }

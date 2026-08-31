@@ -6,6 +6,7 @@ on:
     paths:
       - "_bibliography/publications.bib"
       - "scripts/build_publications.py"
+      - "scripts/build_publications_pdf.py"
       - ".github/workflows/build_publications.yml"
   workflow_dispatch:
 
@@ -25,21 +26,24 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install BibTeX parser
-        run: pip install "bibtexparser==1.4.3"
+      - name: Install publication build dependencies
+        run: pip install "bibtexparser==1.4.3" "reportlab==4.4.3"
 
       - name: Generate publication HTML
         run: python scripts/build_publications.py
 
+      - name: Generate publication PDF
+        run: python scripts/build_publications_pdf.py
+
       - name: Commit generated list when changed
         run: |
-          if git diff --quiet -- _includes/publications-generated.html; then
-            echo "Publication list is already up to date."
+          if git diff --quiet -- _includes/publications-generated.html files/publications.pdf; then
+            echo "Publication outputs are already up to date."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _includes/publications-generated.html
-          git commit -m "Update generated publication list"
+          git add _includes/publications-generated.html files/publications.pdf
+          git commit -m "Update generated publication outputs"
           git push
