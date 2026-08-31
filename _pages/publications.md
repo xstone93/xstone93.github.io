@@ -4,7 +4,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-My publication list is generated from a single BibTeX file. My name is shown in **bold**.
+My publication list is generated from a single BibTeX file. My name is underlined.
 For citation indexing, see also [Google Scholar](https://scholar.google.com/citations?user=vERJIRAAAAAJ&hl=en)
 and [ORCID](https://orcid.org/0000-0002-1760-2855).
 You can also download a [PDF version](/files/publications.pdf) suitable for a CV attachment.
@@ -18,7 +18,13 @@ You can also download a [PDF version](/files/publications.pdf) suitable for a CV
 }
 .publication-title { font-weight: 600; line-height: 1.35; }
 .publication-authors { margin-top: .18rem; line-height: 1.45; }
+.publication-own-name { text-decoration: underline; text-underline-offset: .12em; }
 .publication-venue { margin-top: .18rem; font-style: italic; opacity: .85; }
+.publication-note {
+  margin-top: .3rem;
+  font-weight: 600;
+  color: #9a3412;
+}
 .publication-footer {
   margin-top: .4rem;
   display: flex;
@@ -27,7 +33,7 @@ You can also download a [PDF version](/files/publications.pdf) suitable for a CV
   align-items: center;
   font-size: .88em;
 }
-.publication-type, .publication-year-inline {
+.publication-type {
   padding: .08rem .42rem;
   border: 1px solid rgba(127,127,127,.35);
   border-radius: .3rem;

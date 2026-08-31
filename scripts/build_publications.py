@@ -90,7 +90,7 @@ def author_display(author: str) -> str:
 
         escaped = html.escape(display)
         if OWN_NAME.lower() in display.lower():
-            escaped = f"<strong>{escaped}</strong>"
+            escaped = f'<span class="publication-own-name">{escaped}</span>'
         rendered.append(escaped)
 
     if not rendered:
@@ -170,20 +170,18 @@ def render_entry(entry: dict) -> str:
     ptype = TYPE_LABELS[publication_type(entry)]
     link_html = links(entry)
 
-    meta_parts = [x for x in [pubvenue, note] if x]
-    meta = " · ".join(meta_parts)
-
     lines = [
         '<article class="publication-item">',
         f'  <div class="publication-title">{title}</div>',
     ]
     if authors:
         lines.append(f'  <div class="publication-authors">{authors}</div>')
-    if meta:
-        lines.append(f'  <div class="publication-venue">{meta}</div>')
+    if pubvenue:
+        lines.append(f'  <div class="publication-venue">{pubvenue}</div>')
+    if note:
+        lines.append(f'  <div class="publication-note">{note}</div>')
     lines.append('  <div class="publication-footer">')
     lines.append(f'    <span class="publication-type">{html.escape(ptype)}</span>')
-    lines.append(f'    <span class="publication-year-inline">{year}</span>')
     if link_html:
         lines.append(f'    <span class="publication-links">{link_html}</span>')
     lines.append("  </div>")

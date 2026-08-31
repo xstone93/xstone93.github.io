@@ -85,7 +85,7 @@ def page_footer(canvas, document) -> None:
     canvas.line(22 * mm, 15 * mm, A4[0] - 22 * mm, 15 * mm)
     canvas.setFillColor(colors.HexColor("#667085"))
     canvas.setFont("Helvetica", 8)
-    canvas.drawString(22 * mm, 10 * mm, "Alexander Steinmaurer - Publications")
+    canvas.drawString(22 * mm, 10 * mm, "Alexander Steinmaurer - Publication List")
     canvas.drawRightString(A4[0] - 22 * mm, 10 * mm, f"Page {document.page}")
     canvas.restoreState()
 
@@ -170,6 +170,15 @@ def main() -> None:
         textColor=colors.HexColor("#175CD3"),
         spaceAfter=3.5 * mm,
     )
+    note_style = ParagraphStyle(
+        "Note",
+        parent=citation_style,
+        fontName="Helvetica-Bold",
+        fontSize=8.2,
+        leading=10.5,
+        textColor=colors.HexColor("#9A3412"),
+        spaceAfter=1.5 * mm,
+    )
 
     story = [
         Paragraph("Alexander Steinmaurer - Publications", title_style),
@@ -199,6 +208,9 @@ def main() -> None:
                     citation_parts.append(f"<i>{place}</i>")
                 citation_parts.append(f"{kind}, {html.escape(year)}")
                 content = [Paragraph("<br/>".join(citation_parts), citation_style)]
+                note = clean(entry.get("note"))
+                if note:
+                    content.append(Paragraph(f"Note: {html.escape(note)}", note_style))
                 links = entry_links(entry)
                 if links:
                     content.append(Paragraph(links, link_style))
