@@ -17,20 +17,34 @@ OUTPUT_FILE = ROOT / "_includes" / "publications-generated.html"
 
 OWN_NAME = "Alexander Steinmaurer"
 
-STATUS_ORDER = ["published", "accepted", "preprint", "submitted", "manuscript"]
-STATUS_TITLES = {
-    "published": "Peer-reviewed publications",
-    "accepted": "Accepted / in press",
-    "preprint": "Preprints",
-    "submitted": "Under review",
-    "manuscript": "Work in progress",
+SECTION_ORDER = ["peer_reviewed", "book_other", "preprints_manuscripts"]
+SECTION_TITLES = {
+    "peer_reviewed": "Peer-reviewed Publications",
+    "book_other": "Book Chapters & Other Publications",
+    "preprints_manuscripts": "Preprints & Manuscripts",
 }
+
 TYPE_LABELS = {
     "journal": "Journal",
     "conference": "Conference",
+    "workshop": "Workshop",
+    "book-chapter": "Book chapter",
     "chapter": "Book chapter",
     "thesis": "Thesis",
+    "preprint": "Preprint",
+    "manuscript": "Manuscript",
     "other": "Other",
+}
+
+PUBSTATE_LABELS = {
+    "submitted": "Submitted",
+    "underreview": "Under review",
+    "under review": "Under review",
+    "underrevision": "Under revision",
+    "under revision": "Under revision",
+    "inpress": "Accepted / in press",
+    "in press": "Accepted / in press",
+    "forthcoming": "Accepted / in press",
 }
 
 
@@ -49,15 +63,43 @@ def keywords(entry: dict) -> set[str]:
     return {x.strip().lower() for x in raw.split(",") if x.strip()}
 
 
-def publication_status(entry: dict) -> str:
+def publication_section(entry: dict) -> str:
+    """Map detailed BibTeX metadata to the three public website sections."""
     keys = keywords(entry)
-    for status in STATUS_ORDER:
-        if status in keys:
-            return status
-    # Sensible fallback for entries that have not yet been tagged.
-    if clean(entry.get("pubstate")).lower() in {"inpress", "in press", "forthcoming"}:
-        return "accepted"
-    return "published"
+    pubstate = clean(entry.get("pubstate")).lower()
+
+    # Preprints and manuscripts always belong together.
+    if "preprint" in keys or "manuscript" in keys:
+        return "preprints_manuscripts"
+    if pubstate in {"submitted", "underreview", "under review", "underrevision", "under revision"}:
+        return "preprints_manuscripts"
+
+    # Explicit peer-review marker takes precedence.
+    if "peer-reviewed" in keys or "peer reviewed" in keys:
+        return "peer_reviewed"
+
+    # Accepted/in-press work has already passed peer review.
+    if pubstate in {"inpress", "in press", "forthcoming"}:
+        return "peer_reviewed"
+
+    # Book chapters and explicitly non-peer-reviewed/other outputs.
+    if "book-chapter" in keys or "chapter" in keys or "other" in keys:
+        return "book_other"
+
+    # Backward compatibility for older entries.
+    if "published" in keys and ({"journal", "conference", "workshop"} & keys):
+        return "peer_reviewed"
+
+    entry_type = clean(entry.get("ENTRYTYPE")).lower()
+    if entry_type in {"incollection", "inbook"}:
+        return "book_other"
+
+    # Conservative fallback: published articles/conference papers are treated
+    # as peer-reviewed only when their type strongly indicates that.
+    if entry_type in {"article", "inproceedings", "conference"}:
+        return "peer_reviewed"
+
+    return "book_other"
 
 
 def publication_type(entry: dict) -> str:
@@ -65,21 +107,40 @@ def publication_type(entry: dict) -> str:
     for key in TYPE_LABELS:
         if key in keys:
             return key
+
     entry_type = clean(entry.get("ENTRYTYPE")).lower()
+    if "preprint" in keys:
+        return "preprint"
+    if "manuscript" in keys or entry_type == "unpublished":
+        return "manuscript"
     if entry_type == "article":
         return "journal"
     if entry_type in {"inproceedings", "conference"}:
         return "conference"
     if entry_type in {"incollection", "inbook"}:
-        return "chapter"
+        return "book-chapter"
     if entry_type in {"phdthesis", "mastersthesis"}:
         return "thesis"
     return "other"
 
 
+def status_label(entry: dict) -> str:
+    keys = keywords(entry)
+    pubstate = clean(entry.get("pubstate")).lower()
+
+    if pubstate in PUBSTATE_LABELS:
+        return PUBSTATE_LABELS[pubstate]
+    if "preprint" in keys:
+        return "Preprint"
+    if "manuscript" in keys:
+        return "Manuscript"
+    return ""
+
+
 def author_display(author: str) -> str:
     parts = [p.strip() for p in author.split(" and ") if p.strip()]
     rendered = []
+
     for person in parts:
         person = clean(person)
         if "," in person:
@@ -110,6 +171,7 @@ def venue(entry: dict) -> str:
         or clean(entry.get("institution"))
         or clean(entry.get("school"))
     )
+
     pieces = []
     if name:
         pieces.append(html.escape(name))
@@ -117,14 +179,20 @@ def venue(entry: dict) -> str:
     volume = clean(entry.get("volume"))
     number = clean(entry.get("number"))
     pages = clean(entry.get("pages"))
+    eid = clean(entry.get("eid"))
 
     if volume:
         vol = html.escape(volume)
         if number:
             vol += f"({html.escape(number)})"
         pieces.append(vol)
+    elif number:
+        pieces.append(html.escape(number))
+
     if pages:
         pieces.append(f"pp. {html.escape(pages.replace('--', '–'))}")
+    elif eid:
+        pieces.append(f"Article {html.escape(eid)}")
 
     return ", ".join(pieces)
 
@@ -166,26 +234,31 @@ def render_entry(entry: dict) -> str:
     authors = author_display(entry.get("author", ""))
     pubvenue = venue(entry)
     note = html.escape(clean(entry.get("note")))
-    year = html.escape(clean(entry.get("year")) or "n.d.")
     ptype = TYPE_LABELS[publication_type(entry)]
+    status = status_label(entry)
     link_html = links(entry)
 
     lines = [
         '<article class="publication-item">',
         f'  <div class="publication-title">{title}</div>',
     ]
+
     if authors:
         lines.append(f'  <div class="publication-authors">{authors}</div>')
     if pubvenue:
         lines.append(f'  <div class="publication-venue">{pubvenue}</div>')
     if note:
         lines.append(f'  <div class="publication-note">{note}</div>')
+
     lines.append('  <div class="publication-footer">')
     lines.append(f'    <span class="publication-type">{html.escape(ptype)}</span>')
+    if status:
+        lines.append(f'    <span class="publication-status">{html.escape(status)}</span>')
     if link_html:
         lines.append(f'    <span class="publication-links">{link_html}</span>')
     lines.append("  </div>")
     lines.append("</article>")
+
     return "\n".join(lines)
 
 
@@ -198,39 +271,47 @@ def main() -> None:
     for entry in database.entries:
         if "private" in keywords(entry):
             continue
-        status = publication_status(entry)
+
+        section = publication_section(entry)
         year = clean(entry.get("year")) or "n.d."
-        grouped[status][year].append(entry)
+        grouped[section][year].append(entry)
 
     output = [
         "<!-- AUTO-GENERATED by scripts/build_publications.py. DO NOT EDIT. -->",
         '<div class="publications-list">',
     ]
 
-    for status in STATUS_ORDER:
-        if status not in grouped:
+    for section in SECTION_ORDER:
+        if section not in grouped:
             continue
-        output.append(f'<section class="publication-section" id="{status}">')
-        output.append(f"  <h2>{html.escape(STATUS_TITLES[status])}</h2>")
+
+        output.append(f'<section class="publication-section" id="{section}">')
+        output.append(f"  <h2>{html.escape(SECTION_TITLES[section])}</h2>")
 
         years = sorted(
-            grouped[status].keys(),
+            grouped[section].keys(),
             key=lambda y: (y != "n.d.", int(y) if y.isdigit() else -1),
             reverse=True,
         )
+
         for year in years:
             output.append(f'  <h3 class="publication-year">{html.escape(year)}</h3>')
+
             entries = sorted(
-                grouped[status][year],
+                grouped[section][year],
                 key=lambda e: clean(e.get("title")).lower(),
             )
+
             for entry in entries:
                 output.append(render_entry(entry))
+
         output.append("</section>")
 
     output.append("</div>")
     OUTPUT_FILE.write_text("\n".join(output) + "\n", encoding="utf-8")
-    print(f"Generated {OUTPUT_FILE.relative_to(ROOT)} from {BIB_FILE.relative_to(ROOT)}")
+
+    total = sum(len(entries) for section in grouped.values() for entries in section.values())
+    print(f"Generated {OUTPUT_FILE.relative_to(ROOT)} from {BIB_FILE.relative_to(ROOT)} ({total} entries)")
 
 
 if __name__ == "__main__":

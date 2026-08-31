@@ -5,9 +5,11 @@ author_profile: true
 ---
 
 - **ACM Special Interest Group for Computer Science Education (SIGCSE) Technical Symposium**  
-  Demos & Lightning Talks Chair — *St. Louis, 2026*
+  Demos & Lightning Talks Chair — *Sacramento, CA, 2027*
+  Demos & Lightning Talks Chair — *St. Louis, MO, 2026*
 
 - **ACM Innovation and Technology in Computer Science Education (ITiCSE)**  
+  Tips, Techniques, Courseware, Posters and Panels Chair — *Glasgow, 2027*
   Tips, Techniques, Courseware, Posters and Panels Chair — *Madrid, 2026*
 
 - **IEEE EDUCON**  

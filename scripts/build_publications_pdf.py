@@ -181,7 +181,7 @@ def main() -> None:
     )
 
     story = [
-        Paragraph("Alexander Steinmaurer - Publications", title_style),
+        Paragraph("Alexander Steinmaurer - Publication List", title_style),
         Paragraph(f"Updated {date.today().strftime('%d %B %Y')}", updated_style),
     ]
 
