@@ -19,6 +19,8 @@ Since 2020, I have been an **external lecturer** at the University College of Te
 
 During the Fall 2023 semester, I was a **research fellow** with the [PLT Group](https://cs.brown.edu/research/plt/) at Brown University, working with Prof. [Shriram Krishnamurthi](https://cs.brown.edu/~sk/) and Prof. [Kathi Fisler](https://cs.brown.edu/~kfisler/). My work there focused on developing new approaches and tools for rethinking data science and programming education in the context of large language models.
 
+{% include news.html %}
+
 ## Working with me? 
 
 If you are interested in my research area and would like to discuss your ideas (as researcher or student), I am happy to hear from you. Just drop me an email (alexander.steinmaurer@it-u.at).

@@ -1,0 +1,5 @@
+# Add new entries at any position; the website sorts them by date.
+# Keep dates quoted so YAML treats them as plain ISO date strings.
+- date: "2026-08-31"
+  text: "My updated publication list and downloadable PDF are now available."
+  url: "/publications/"
