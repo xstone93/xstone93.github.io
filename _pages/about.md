@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-## Who is Alex?
+## Who am I?
 
-I am **Alex Steinmaurer**, a computer scientist, teacher, and researcher from Austria. I currently work at [IT:U Austria](https://it-u.at/), a newly established interdisciplinary university in Linz focused on transforming learning and science. I have a [PostDoc position](https://it-u.at/en/persons/team/alexander-steinmaurer/), advised by Prof. [Manuela Paechter](https://it-u.at/en/research/professors/manuela-paechter/). I earned my Ph.D. in Computer Science from the [Faculty of Computer Science and Biomedical Engineering](https://csbme.tugraz.at/) at Graz University of Technology, supervised by Prof. [Christian Gütl](https://online.tugraz.at/tug_online/pl/ui/$ctx/visitenkarte.show_vcard?pPersonenId=DBBE6CF53E98F4C0&pPersonenGruppe=3).
+I am **Alex(ander) Steinmaurer**, a computer scientist, teacher, and researcher from Austria. I currently work at [IT:U Austria](https://it-u.at/), a newly established interdisciplinary university in Linz focused on transforming learning and science. I have a [PostDoc position](https://it-u.at/en/persons/team/alexander-steinmaurer/), advised by Prof. [Manuela Paechter](https://it-u.at/en/research/professors/manuela-paechter/). I earned my Ph.D. in Computer Science from the [Faculty of Computer Science and Biomedical Engineering](https://csbme.tugraz.at/) at Graz University of Technology, supervised by Prof. [Christian Gütl](https://online.tugraz.at/tug_online/pl/ui/$ctx/visitenkarte.show_vcard?pPersonenId=DBBE6CF53E98F4C0&pPersonenGruppe=3).
 
 My research lies at the intersection of computer science and education, with a particular focs on how technology (especially GenAI) affects learning and teaching in computer science. See the [_Research_](https://xstone93.github.io/research/) section for more information.
 
